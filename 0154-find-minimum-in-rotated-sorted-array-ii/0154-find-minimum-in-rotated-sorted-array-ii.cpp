@@ -1,14 +1,25 @@
 class Solution {
 public:
     int findMin(vector<int>& nums) {
-        int minimum=nums[0];
-        for(int num:nums)
+       int left=0;
+       int right=nums.size()-1;
+       while(left<right)
+       {
+        int mid=left+(right-left)/2;
+
+        if(nums[mid]<nums[right])
         {
-            if(num<minimum)
-            {
-                minimum=num;
-            }
+            right=mid;
         }
-        return minimum;
+        else if(nums[mid]>nums[right])
+        {
+            left=mid+1;
+        }
+        else
+        {
+            right--;
+        }
+       }
+       return nums[left];
     }
 };
