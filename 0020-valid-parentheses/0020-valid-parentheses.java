@@ -9,7 +9,7 @@ class Solution {
                 result+=c;
             }
         }
-        while(result.contains("()")||result.contains("{}")||result.contains("[]"))
+        while(result.contains("()") || result.contains("{}") || result.contains("[]"))
         {
             result=result.replace("()","");
             result=result.replace("{}","");
